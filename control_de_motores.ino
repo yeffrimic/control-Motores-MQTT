@@ -20,7 +20,7 @@
 
 const char* ssid = "ESP8266";
 const char* password = "11111111";
-const char* mqtt_server = "45.55.83.183";
+const char* mqtt_server = "broker";
 
 WiFiClient espClient;
 PubSubClient client(espClient);

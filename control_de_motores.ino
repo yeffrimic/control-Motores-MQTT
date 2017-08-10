@@ -16,11 +16,11 @@
 #define motor1Adelante D7
 #define motor1Atras D6
 #define motor2Adelante D5
-#define motor2Atras D8
+#define motor2Atras D4
 
 const char* ssid = "ESP8266";
 const char* password = "11111111";
-const char* mqtt_server = "broker";
+const char* mqtt_server = "45.55.83.183";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -70,39 +70,39 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   if ((char)payload[0] == 'a') {
     Serial.println("izquierda");
-    digitalWrite(motor1Adelante,LOW);
-    digitalWrite(motor2Adelante,HIGH);
-    digitalWrite(motor1Atras,LOW);
-    digitalWrite(motor2Atras,LOW);
-    
+    digitalWrite(motor1Adelante, LOW);
+    digitalWrite(motor2Adelante, HIGH);
+    digitalWrite(motor1Atras, LOW);
+    digitalWrite(motor2Atras, LOW);
+
   }
   if ((char)payload[0] == 'w') {
     Serial.println("adelante");
-    digitalWrite(motor1Adelante,HIGH);
-    digitalWrite(motor2Adelante,HIGH);
-    digitalWrite(motor1Atras,LOW);
-    digitalWrite(motor2Atras,LOW);
+    digitalWrite(motor1Adelante, HIGH);
+    digitalWrite(motor2Adelante, HIGH);
+    digitalWrite(motor1Atras, LOW);
+    digitalWrite(motor2Atras, LOW);
   }
   if ((char)payload[0] == 'd') {
     Serial.println("derecha");
-    digitalWrite(motor1Adelante,HIGH);
-    digitalWrite(motor2Adelante,LOW);
-    digitalWrite(motor1Atras,LOW);
-    digitalWrite(motor2Atras,LOW);
+    digitalWrite(motor1Adelante, HIGH);
+    digitalWrite(motor2Adelante, LOW);
+    digitalWrite(motor1Atras, LOW);
+    digitalWrite(motor2Atras, LOW);
   }
   if ((char)payload[0] == 's') {
     Serial.println("atras");
-    digitalWrite(motor1Adelante,LOW);
-    digitalWrite(motor2Adelante,LOW);
-    digitalWrite(motor1Atras,HIGH);
-    digitalWrite(motor2Atras,HIGH);
+    digitalWrite(motor1Adelante, LOW);
+    digitalWrite(motor2Adelante, LOW);
+    digitalWrite(motor1Atras, HIGH);
+    digitalWrite(motor2Atras, HIGH);
   }
   if ((char)payload[0] == 'q') {
     Serial.println("parar");
-    digitalWrite(motor1Adelante,LOW);
-    digitalWrite(motor2Adelante,LOW);
-    digitalWrite(motor1Atras,LOW);
-    digitalWrite(motor2Atras,LOW);
+    digitalWrite(motor1Adelante, LOW);
+    digitalWrite(motor2Adelante, LOW);
+    digitalWrite(motor1Atras, LOW);
+    digitalWrite(motor2Atras, LOW);
   }
 
 }
